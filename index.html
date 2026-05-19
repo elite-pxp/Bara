@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bara Christian School | Brilliance Created In His Image</title>
+  <style>
+    :root {
+      --jon: #0f1f3a;
+      --double-colonial-white: #f4ecdb;
+      --gray-olive: #8f9174;
+      --manatee: #8d90a1;
+      --white: #ffffff;
+      --text-dark: #1f2733;
+      --section-gap: clamp(2.8rem, 6vw, 5rem);
+      --radius: 16px;
+      --shadow: 0 12px 28px rgba(15, 31, 58, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Times New Roman", Times, serif;
+      font-weight: 400;
+    }
+
+    body {
+      background: linear-gradient(180deg, #fffdf8 0%, var(--double-colonial-white) 100%);
+      color: var(--text-dark);
+      line-height: 1.65;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, 92vw);
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(15, 31, 58, 0.96);
+      border-bottom: 1px solid rgba(244, 236, 219, 0.35);
+      backdrop-filter: blur(4px);
+    }
+
+    .header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.8rem 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--double-colonial-white);
+    }
+
+    .brand img {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+    }
+
+    .brand p {
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+    }
+
+    .nav {
+      display: none;
+      gap: 1.1rem;
+      color: var(--double-colonial-white);
+      font-size: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      padding: 0.78rem 1.35rem;
+      font-size: 1rem;
+      transition: 0.2s ease;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--double-colonial-white);
+      color: var(--jon);
+      border-color: var(--double-colonial-white);
+    }
+
+    .btn-primary:hover { background: #fff6e2; }
+
+    .btn-secondary {
+      background: var(--manatee);
+      color: #101726;
+      border-color: var(--manatee);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--double-colonial-white);
+      border-color: rgba(244, 236, 219, 0.8);
+    }
+
+    section {
+      padding: var(--section-gap) 0;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.25;
+      color: var(--jon);
+    }
+
+    h1 { font-size: clamp(2rem, 5vw, 3.2rem); }
+    h2 { font-size: clamp(1.6rem, 4vw, 2.35rem); margin-bottom: 1rem; }
+    h3 { font-size: 1.35rem; margin-bottom: 0.6rem; }
+
+    p + p { margin-top: 1rem; }
+
+    .hero {
+      background:
+        linear-gradient(115deg, rgba(15, 31, 58, 0.9), rgba(15, 31, 58, 0.72)),
+        url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+      color: var(--double-colonial-white);
+      padding: clamp(3.2rem, 10vw, 6rem) 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 1.6rem;
+      align-items: center;
+    }
+
+    .hero h1,
+    .hero p { color: var(--double-colonial-white); }
+
+    .accent {
+      margin-top: 1rem;
+      letter-spacing: 0.08em;
+      color: #fff0c8;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.4rem;
+    }
+
+    .hero-card {
+      background: rgba(244, 236, 219, 0.11);
+      border: 1px solid rgba(244, 236, 219, 0.35);
+      border-radius: var(--radius);
+      padding: 1rem;
+      max-width: 360px;
+    }
+
+    .warm {
+      background: var(--double-colonial-white);
+    }
+
+    .dark {
+      background: var(--jon);
+      color: var(--double-colonial-white);
+    }
+
+    .dark h2,
+    .dark h3,
+    .dark p,
+    .dark li { color: var(--double-colonial-white); }
+
+    .grid-2,
+    .grid-3,
+    .grid-5 {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid rgba(143, 145, 116, 0.4);
+      border-radius: var(--radius);
+      padding: 1.2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .scripture-card {
+      background: #fffdfa;
+      border-left: 5px solid var(--gray-olive);
+    }
+
+    ul.benefits {
+      list-style: none;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    ul.benefits li {
+      padding: 0.95rem 1rem;
+      border-radius: 12px;
+      background: rgba(141, 144, 161, 0.18);
+      border: 1px solid rgba(141, 144, 161, 0.45);
+    }
+
+    .statement {
+      text-align: center;
+      background: linear-gradient(135deg, #152a4c, #0f1f3a 58%, #1f345d);
+    }
+
+    .statement .btn { margin-top: 1.3rem; }
+
+    .contact-wrap {
+      background: var(--manatee);
+      border-radius: var(--radius);
+      padding: clamp(1.2rem, 3.5vw, 2rem);
+    }
+
+    form {
+      display: grid;
+      gap: 0.9rem;
+      margin-top: 1.2rem;
+    }
+
+    label {
+      font-size: 0.97rem;
+      color: #121a2a;
+      margin-bottom: 0.3rem;
+      display: block;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.75rem 0.85rem;
+      border-radius: 10px;
+      border: 1px solid rgba(31, 39, 51, 0.2);
+      font-size: 1rem;
+      color: #182130;
+      background: #f9f8fb;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .site-footer {
+      background: var(--jon);
+      color: var(--double-colonial-white);
+      padding: 2.3rem 0;
+      border-top: 1px solid rgba(244, 236, 219, 0.3);
+    }
+
+    .footer-grid {
+      display: grid;
+      gap: 1.2rem;
+      align-items: center;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .footer-brand img {
+      width: 68px;
+      height: 68px;
+      object-fit: contain;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      border-bottom: 1px solid rgba(244, 236, 219, 0.6);
+      padding-bottom: 2px;
+    }
+
+    .copyright {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: rgba(244, 236, 219, 0.9);
+    }
+
+    @media (min-width: 760px) {
+      .nav { display: flex; }
+      .hero-grid { grid-template-columns: 1.4fr 1fr; }
+      .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .grid-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+      .footer-grid { grid-template-columns: 1.2fr 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="#home">
+        <img src="bara-logo.png" alt="Bara Christian School logo" />
+        <p>Bara Christian School</p>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#mission">Mission</a>
+        <a href="#vision">Vision</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn-outline" href="#contact">Schedule a Tour</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <h1>Brilliance Created In His Image.</h1>
+          <p>A Christ-centered academy cultivating students through Faith, Purpose, and Excellence while nurturing spiritual growth, academic achievement, leadership, creativity, and character.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Schedule a Tour</a>
+            <a class="btn btn-secondary" href="#contact">Request Enrollment Info</a>
+          </div>
+          <p class="accent">Faith • Purpose • Excellence</p>
+        </div>
+        <aside class="hero-card" aria-label="Hero spotlight">
+          <p><strong>Family-Centered Learning:</strong> We partner with families to help every student discover identity in Christ and grow with confidence, wisdom, and purpose.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about" class="warm">
+      <div class="container">
+        <h2>Who We Are</h2>
+        <p>Bara Christian School is a Christ-centered learning community dedicated to helping students grow academically, spiritually, and purposefully. We believe every child is intentionally created by God with divine purpose and brilliance. Through biblical truth, strong academics, leadership development, creativity, and character-building, we prepare students to walk confidently in who God created them to be.</p>
+      </div>
+    </section>
+
+    <section id="mission">
+      <div class="container grid-2">
+        <div>
+          <h2>Our Mission</h2>
+          <p>At Bara Christian School, our mission is to cultivate students through Faith, Purpose, and Excellence by providing a Christ-centered education that nurtures spiritual growth, academic achievement, leadership, creativity, and character.</p>
+          <p>We believe every child is intentionally created by God with divine purpose and brilliance. Through biblical truth, innovative learning, and a culture of love and discipline, we equip students to discover their identity in Christ, walk confidently in their calling, and impact the world with wisdom, integrity, and compassion.</p>
+        </div>
+        <div class="card" style="background: var(--double-colonial-white)">
+          <h3>Short Brand Statement</h3>
+          <p>A Christ-centered academy dedicated to developing students academically, spiritually, and purposefully through biblical truth, leadership, and excellence.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="vision" class="dark">
+      <div class="container">
+        <h2>Our Vision</h2>
+        <p>The vision of Bara Christian School is to raise a generation of spiritually grounded, purpose-driven leaders who reflect the image of Christ in every area of life.</p>
+        <p>We envision a thriving Christian learning community where students are empowered academically, strengthened spiritually, developed creatively, and prepared to lead with excellence in their homes, communities, businesses, ministries, and future careers.</p>
+        <p>Through faith-based education and Kingdom principles, Bara Christian School seeks to ignite God-given brilliance and inspire students to become transformational leaders who shine as lights in the world.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Our Core Values</h2>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Faith</h3>
+            <p>Students are guided through biblical truth and encouraged to grow in their relationship with Christ.</p>
+          </article>
+          <article class="card">
+            <h3>Purpose</h3>
+            <p>Students are taught to understand their God-given identity, gifts, and calling.</p>
+          </article>
+          <article class="card">
+            <h3>Excellence</h3>
+            <p>Students are encouraged to pursue academic achievement, leadership, creativity, discipline, and strong character.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="warm">
+      <div class="container">
+        <h2>Built on Biblical Truth</h2>
+        <div class="grid-2">
+          <article class="card scripture-card">
+            <p>“I will praise thee; for I am fearfully and wonderfully made.” — Psalm 139:14</p>
+          </article>
+          <article class="card scripture-card">
+            <p>“Thy word is a lamp unto my feet, and a light unto my path.” — Psalm 119:105</p>
+          </article>
+        </div>
+        <p style="margin-top:1.2rem;">At Bara Christian School, biblical truth is the foundation of learning, leadership, and identity. Students are reminded that they are created with purpose and guided by God’s Word.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Developing the Whole Student</h2>
+        <div class="grid-5">
+          <article class="card"><h3>Spiritual Growth</h3><p>Helping students build a strong foundation in Christ.</p></article>
+          <article class="card"><h3>Academic Achievement</h3><p>Encouraging students to grow in knowledge, focus, and learning confidence.</p></article>
+          <article class="card"><h3>Leadership</h3><p>Preparing students to lead with wisdom, courage, and integrity.</p></article>
+          <article class="card"><h3>Creativity</h3><p>Creating space for students to think, express, build, and discover their gifts.</p></article>
+          <article class="card"><h3>Character</h3><p>Teaching discipline, compassion, responsibility, and respect.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="warm">
+      <div class="container">
+        <h2>Why Choose Bara Christian School</h2>
+        <ul class="benefits">
+          <li>Christ-centered education rooted in biblical truth.</li>
+          <li>A loving and disciplined learning culture.</li>
+          <li>Focus on academic, spiritual, creative, and leadership development.</li>
+          <li>Purpose-based learning that helps students understand their identity in Christ.</li>
+          <li>A family-centered school community committed to raising future leaders.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="statement dark">
+      <div class="container">
+        <h2>Faith • Purpose • Excellence</h2>
+        <p>Bara Christian School exists to help students discover their God-given brilliance, grow in biblical truth, and walk boldly in the purpose for which they were created.</p>
+        <a class="btn btn-primary" href="#contact">Connect With Us</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-wrap">
+        <h2>Ready to Learn More?</h2>
+        <p>Complete the form below to request more information about Bara Christian School, schedule a tour, or connect with our team.</p>
+        <form>
+          <div>
+            <label for="parentName">Parent / Guardian Name</label>
+            <input id="parentName" name="parentName" type="text" />
+          </div>
+          <div>
+            <label for="email">Email Address (required)</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+          <div>
+            <label for="phone">Phone Number (optional)</label>
+            <input id="phone" name="phone" type="tel" />
+          </div>
+          <div>
+            <label for="studentGrade">Student Age / Grade Level</label>
+            <input id="studentGrade" name="studentGrade" type="text" />
+          </div>
+          <div>
+            <label for="message">Message (optional)</label>
+            <textarea id="message" name="message"></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Request Information</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="bara-logo.png" alt="Bara Christian School logo" />
+        <div>
+          <p>Bara Christian School</p>
+          <p>Faith • Purpose • Excellence</p>
+        </div>
+      </div>
+      <div>
+        <p>Contact: info@barachristianschool.org</p>
+        <p>Phone: +1 (555) 210-1191</p>
+        <p>Address: 101 Faith Avenue, Learning City</p>
+      </div>
+      <div>
+        <p>Social Links</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook">Facebook</a>
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="YouTube">YouTube</a>
+        </div>
+      </div>
+    </div>
+    <div class="container copyright">© 2026 Bara Christian School. All rights reserved.</div>
+  </footer>
+</body>
+</html>
