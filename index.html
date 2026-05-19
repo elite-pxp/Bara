@@ -9,20 +9,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #0ea5e9;
-      --primary-strong: #0284c7;
-      --secondary: #38bdf8;
-      --cta: #f97316;
-      --cta-strong: #ea580c;
-      --bg: #f0f9ff;
+      --primary: #241726;
+      --primary-strong: #1a101b;
+      --secondary: #7c8494;
+      --cta: #f1cd92;
+      --cta-strong: #dcb97f;
+      --bg: #f2eee7;
       --surface: #ffffff;
-      --surface-soft: #e0f2fe;
-      --text: #0c4a6e;
-      --text-soft: #155e75;
+      --surface-soft: #e7e2d7;
+      --text: #241726;
+      --text-soft: #4a3f42;
       --section-gap: clamp(3rem, 7vw, 6rem);
       --radius: 18px;
-      --shadow: 0 18px 40px rgba(12, 74, 110, 0.14);
-      --border: 1px solid rgba(14, 165, 233, 0.25);
+      --shadow: 0 18px 40px rgba(36, 23, 38, 0.14);
+      --border: 1px solid rgba(160, 151, 128, 0.45);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -31,8 +31,8 @@
 
     body {
       background:
-        radial-gradient(circle at 8% 10%, rgba(56, 189, 248, 0.22) 0, rgba(56, 189, 248, 0) 36%),
-        radial-gradient(circle at 90% 5%, rgba(249, 115, 22, 0.15) 0, rgba(249, 115, 22, 0) 30%),
+        radial-gradient(circle at 8% 10%, rgba(124, 132, 148, 0.22) 0, rgba(124, 132, 148, 0) 36%),
+        radial-gradient(circle at 90% 5%, rgba(241, 205, 146, 0.24) 0, rgba(241, 205, 146, 0) 30%),
         var(--bg);
       color: var(--text);
       line-height: 1.65;
@@ -54,7 +54,7 @@
       left: 0;
       width: 100%;
       height: 4px;
-      background: rgba(14, 165, 233, 0.18);
+      background: rgba(160, 151, 128, 0.35);
       z-index: 30;
     }
 
@@ -76,7 +76,7 @@
       border: var(--border);
       border-radius: 999px;
       backdrop-filter: blur(10px);
-      box-shadow: 0 10px 24px rgba(12, 74, 110, 0.1);
+      box-shadow: 0 10px 24px rgba(36, 23, 38, 0.12);
     }
 
     .header-row {
@@ -118,7 +118,7 @@
       width: 44px;
       height: 44px;
       border-radius: 999px;
-      border: 1px solid rgba(12, 74, 110, 0.25);
+      border: 1px solid rgba(160, 151, 128, 0.6);
       background: #fff;
       color: var(--text);
       font-size: 1.2rem;
@@ -171,25 +171,25 @@
 
     .btn:hover {
       transform: translateY(-1px);
-      box-shadow: 0 10px 22px rgba(12, 74, 110, 0.18);
+      box-shadow: 0 10px 22px rgba(36, 23, 38, 0.2);
     }
 
     .btn-primary {
       background: linear-gradient(120deg, var(--cta), var(--cta-strong));
-      color: #fff;
+      color: #241726;
       border-color: transparent;
     }
 
     .btn-secondary {
       background: linear-gradient(120deg, var(--primary), var(--primary-strong));
-      color: #fff;
+      color: #ffffff;
       border-color: transparent;
     }
 
     .btn-outline {
       background: #fff;
       color: var(--text);
-      border-color: rgba(12, 74, 110, 0.25);
+      border-color: rgba(160, 151, 128, 0.65);
     }
 
     .btn-outline:hover {
@@ -231,7 +231,7 @@
       inset: auto -180px -220px auto;
       width: 460px;
       height: 460px;
-      background: radial-gradient(circle, rgba(249, 115, 22, 0.2), rgba(249, 115, 22, 0));
+      background: radial-gradient(circle, rgba(241, 205, 146, 0.35), rgba(241, 205, 146, 0));
       pointer-events: none;
     }
 
@@ -280,11 +280,11 @@
     }
 
     .dark {
-      background: linear-gradient(145deg, #0c4a6e, #075985 58%, #0ea5e9);
-      color: #f0f9ff;
+      background: linear-gradient(145deg, #241726, #5a4f55 58%, #7c8494);
+      color: #f5f1e8;
     }
 
-    .dark h2, .dark h3, .dark p, .dark li { color: #f0f9ff; }
+    .dark h2, .dark h3, .dark p, .dark li { color: #f5f1e8; }
 
     .grid-2, .grid-3, .grid-5 {
       display: grid;
@@ -333,12 +333,12 @@
       border-radius: 12px;
       background: #fff;
       border: var(--border);
-      box-shadow: 0 8px 18px rgba(12, 74, 110, 0.08);
+      box-shadow: 0 8px 18px rgba(36, 23, 38, 0.12);
     }
 
     .statement {
       text-align: center;
-      background: linear-gradient(145deg, #0c4a6e, #075985 58%, #0ea5e9);
+      background: linear-gradient(145deg, #241726, #5a4f55 58%, #7c8494);
     }
 
     .statement .btn { margin-top: 1.25rem; }
@@ -369,7 +369,7 @@
       width: 100%;
       padding: 0.75rem 0.85rem;
       border-radius: 10px;
-      border: 1px solid rgba(12, 74, 110, 0.25);
+      border: 1px solid rgba(160, 151, 128, 0.65);
       font-size: 1rem;
       color: var(--text);
       background: #fff;
@@ -378,8 +378,8 @@
     textarea { min-height: 120px; resize: vertical; }
 
     .site-footer {
-      background: #083344;
-      color: #f0f9ff;
+      background: #241726;
+      color: #f5f1e8;
       padding: 2.5rem 0;
       border-top: 1px solid rgba(240, 249, 255, 0.28);
       background-image: linear-gradient(rgba(8, 51, 68, 0.85), rgba(8, 51, 68, 0.85)), url("https://res.cloudinary.com/dozcy2jve/image/upload/v1779225424/images/Optional_footer_image_avmqec.png");
